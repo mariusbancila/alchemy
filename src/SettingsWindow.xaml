@@ -1,0 +1,212 @@
+﻿<Window x:Class="Alchemy.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="More options" Height="400" Width="560"
+        Background="Black" Loaded="Window_Loaded" ResizeMode="NoResize" Closing="Window_Closing">
+   <Window.Resources>
+      <Style TargetType="{x:Type TabItem}">
+         <Setter Property="Template">
+            <Setter.Value>
+               <ControlTemplate TargetType="{x:Type TabItem}">
+                  <Grid>
+                     <Border Name="Border"
+                             Background="Black"
+                             BorderBrush="White"
+                             BorderThickness="1,1,1,1">
+                        <ContentPresenter x:Name="ContentSite"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"
+                                          ContentSource="Header"
+                                          Margin="12,2,12,2"/>
+                     </Border>
+                  </Grid>
+                  <ControlTemplate.Triggers>
+                     <Trigger Property="IsSelected" Value="True">
+                        <Setter TargetName="Border" Property="Background" Value="Gray" />
+                     </Trigger>
+                     <Trigger Property="IsSelected" Value="False">
+                        <Setter TargetName="Border" Property="Background" Value="Black" />
+                     </Trigger>
+                  </ControlTemplate.Triggers>
+               </ControlTemplate>
+            </Setter.Value>
+         </Setter>
+      </Style>
+   </Window.Resources>
+   <TabControl Height="Auto" Name="tabControlMore" Width="Auto" Background="Black" SelectionChanged="tabControlMore_SelectionChanged">
+      <TabControl.Resources>
+      </TabControl.Resources>
+      <!-- storage tab -->
+      <TabItem Header="Saves" Name="tabItemSaves" Background="Black" Foreground="White">
+         <DockPanel>
+            <Label Name="labelSaves"
+                   VerticalAlignment="Top" 
+                   Height="Auto" Margin="5,5,0,0"
+                   DockPanel.Dock="Top">
+               <TextBlock Name="textSavesDescription"
+                          Width="Auto" Height="Auto"
+                          VerticalAlignment="Top"
+                          TextWrapping="Wrap"
+                          Foreground="White"
+                          Text="Your game progress is saved automatically when you close the game and loaded when you start. You can store or load the progress to or from other file than the default.">                  
+               </TextBlock>
+            </Label>
+            
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top"
+                        VerticalAlignment="Top"
+                        Margin="10,5,0,0">
+               <Button Name="buttonSave"
+                    Width="60" Height="80"
+                    Background="Black" Foreground="White"
+                    Focusable="False"
+                    HorizontalAlignment="Left" Click="buttonSave_Click">
+                  <StackPanel>
+                     <Image Source="Images/saveblack.png"
+                                   Width="48" Height="48" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   />
+                     <Label Name="buttonSaveLabel" 
+                                   Foreground="White"
+                                   VerticalContentAlignment="Top" HorizontalContentAlignment="Center"
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   Height="28"
+                                   Content="Save"/>
+                  </StackPanel>
+               </Button>
+
+               <Button Name="buttonLoad"
+                    Width="60" Height="80"
+                    Background="Black" Foreground="White"
+                    Focusable="False"
+                    HorizontalAlignment="Left" Click="buttonLoad_Click">
+                  <StackPanel>
+                     <Image Source="Images/loadblack.png"
+                                   Width="48" Height="48" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   />
+                     <Label Name="buttonLoadLabel" 
+                                   Foreground="White"
+                                   VerticalContentAlignment="Top" HorizontalContentAlignment="Center"
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   Height="28"
+                                   Content="Load"/>
+                  </StackPanel>
+               </Button>
+
+               <Button Name="buttonReset"
+                    Width="60" Height="80"
+                    Background="Black" Foreground="White"
+                    Focusable="False"
+                    HorizontalAlignment="Left" Click="buttonReset_Click">
+                  <StackPanel>
+                     <Image Source="Images/trashblack.png"
+                                   Width="48" Height="48" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   />
+                     <Label Name="buttonResetLabel" 
+                                   Foreground="White"
+                                   VerticalContentAlignment="Top" HorizontalContentAlignment="Center"
+                                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                                   Height="28"
+                                   Content="Reset"/>
+                  </StackPanel>
+               </Button>
+            </StackPanel>
+         </DockPanel>
+      </TabItem>
+      <!-- end storage tab -->
+
+      <!-- language tab -->
+      <TabItem Header="Language" Name="tabItemLanguage" Background="Black" Foreground="White">
+         <DockPanel Background="Black"
+               LastChildFill="True">
+            <Label Name="languageTipLabel"
+               DockPanel.Dock="Top"
+               Margin="5,5,5,0"
+               VerticalAlignment="Top"
+               Foreground="White">
+               <TextBlock Name="languageTipText"
+                          VerticalAlignment="Top" 
+                          TextWrapping="Wrap"
+                          Text="Select language" />
+            </Label>
+            <Button Name="newLanguageButton"
+                    Content="Set new language"
+                    DockPanel.Dock="Bottom"
+                    Background="Black" Foreground="White"
+                    HorizontalAlignment="Left"
+                    Height="30" Width="535"
+                    Focusable="False"
+                    Margin="5,5,0,0" Click="newLanguageButton_Click" />
+            <ListBox Name="languagesListBox" 
+                     DockPanel.Dock="Top"
+                     Height="Auto" Width="535" Margin="5,5,0,0"
+                     HorizontalAlignment="Left" VerticalAlignment="Top" 
+                     Background="Black" SelectionChanged="languagesListBox_SelectionChanged">
+            </ListBox>
+         </DockPanel>
+      </TabItem>
+      <!-- end language tab -->
+
+      <!-- settings tab -->
+      <TabItem Header="Settings" Name="tabItemSettings" Background="Black" Foreground="White">
+         <Grid>
+            <CheckBox Name="checkBoxCombineOnlyNew" 
+                      Height="16" Margin="15,15,0,0" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" 
+                      Foreground="White"
+                      Content="Combine only new (ignore already discovered combinations)" />
+            <CheckBox Name="checkBoxTapToCombine" 
+                      Height="16" Margin="15,45,0,0" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" 
+                      Foreground="White"
+                      Content="Tap to combine (don't drag, tap on 1st element and then on 2nd)" />
+            <CheckBox Name="checkBoxTimer" 
+                      Height="16" Margin="15,70,0,0" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" 
+                      Foreground="White"
+                      Content="Display timer (total elapsed time)" />
+            </Grid>
+      </TabItem>
+      <!-- end settings tab -->
+
+      <!-- cheats tab -->
+      <TabItem Header="Cheats" Name="tabItemCheats" Background="Black" Foreground="White">
+         <Grid>
+            <ListBox Name="allElementsList" 
+                         Height="Auto" Width="Auto" 
+                         Background="Black"
+                         DockPanel.Dock="Bottom" 
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+               <ListBox.ItemsPanel>
+                  <ItemsPanelTemplate>
+                     <WrapPanel />
+                  </ItemsPanelTemplate>
+               </ListBox.ItemsPanel>
+            </ListBox>
+         </Grid>
+      </TabItem>
+      <!-- end cheats tab -->
+
+      <!-- credits tab -->
+      <TabItem Header="Credits" Name="tabItemCredits" Background="Black" Foreground="White">
+         <ListBox Name="listBoxCredits" 
+                  Height="Auto" Width="530" Margin="5,5,0,0"
+                  Background="Black" Foreground="White"
+                  HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <!--<StackPanel>
+               <Label Foreground="White" 
+                      Content="Marius Bancila"
+                      FontWeight="Normal" FontSize="14"
+                      VerticalContentAlignment="Top" VerticalAlignment="Top"/>
+               <Label Foreground="LightBlue" 
+                      Content="Romanian"
+                      VerticalContentAlignment="Top" VerticalAlignment="Top"/>
+               
+               <Rectangle Stroke="White" Width="500" />
+            </StackPanel>-->
+         </ListBox>
+      </TabItem>
+      <!-- end credits tab -->
+   </TabControl>
+</Window>

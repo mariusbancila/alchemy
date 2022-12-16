@@ -1,0 +1,16 @@
+﻿Mineral=Brown
+Life=Green
+Animal=Yellow
+Air=White
+Fire=Red
+Object=LightCoral
+Liquid=White
+Metal=Silver
+Food=LightGreen
+Media=Gold
+Abstract=White
+Building=Gray
+Spacetime=Yellow
+People=Red
+Machinery=LightCoral
+Place=White

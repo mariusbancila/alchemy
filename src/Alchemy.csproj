@@ -1,0 +1,701 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+   <PropertyGroup>
+      <TargetFramework>net7.0-windows</TargetFramework>
+      <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+      <OutputType>WinExe</OutputType>
+      <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+      <UseWindowsForms>true</UseWindowsForms>
+      <UseWPF>true</UseWPF>
+      <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+   </PropertyGroup>
+   <PropertyGroup>
+      <ApplicationIcon>alchemy.ico</ApplicationIcon>
+   </PropertyGroup>
+   <PropertyGroup>
+      <TransformOnBuild>true</TransformOnBuild>
+   </PropertyGroup>
+   <ItemGroup>
+      <Compile Update="AlchemyCredits.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyCredits.tt</DependentUpon>
+      </Compile>
+      <Compile Update="AlchemyResources.Elements.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyResources.Elements.tt</DependentUpon>
+      </Compile>
+      <Compile Update="AlchemyResources.Languages.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyResources.Languages.tt</DependentUpon>
+      </Compile>
+      <Compile Update="AlchemyResources.UI.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyResources.UI.tt</DependentUpon>
+      </Compile>
+      <Compile Update="AlchemyCombinations.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyCombinations.tt</DependentUpon>
+      </Compile>
+      <Compile Update="AlchemyElementGroups.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyElementGroups.tt</DependentUpon>
+      </Compile>
+      <Compile Update="AlchemyElements.cs">
+         <AutoGen>True</AutoGen>
+         <DesignTime>True</DesignTime>
+         <DependentUpon>AlchemyElements.tt</DependentUpon>
+      </Compile>
+   </ItemGroup>
+   <ItemGroup>
+      <None Update="AlchemyCombinations.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+         <LastGenOutput>AlchemyCombinations.cs</LastGenOutput>
+      </None>
+      <None Update="AlchemyCredits.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+         <LastGenOutput>AlchemyCredits.cs</LastGenOutput>
+      </None>
+      <None Update="AlchemyElementGroups.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+         <LastGenOutput>AlchemyElementGroups.cs</LastGenOutput>
+      </None>
+      <None Update="AlchemyElements.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+         <LastGenOutput>AlchemyElements.cs</LastGenOutput>
+      </None>
+      <None Update="AlchemyResources.Languages.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+         <LastGenOutput>AlchemyResources.Languages.cs</LastGenOutput>
+      </None>
+      <None Update="AlchemyResources.UI.tt">
+         <Generator>TextTemplatingFileGenerator</Generator>
+         <LastGenOutput>AlchemyResources.UI.cs</LastGenOutput>
+      </None>
+      <AppDesigner Include="Properties\" />
+   </ItemGroup>
+   <ItemGroup>
+      <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="alchemy.ico" />
+   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="Images\Elements\1upmushroom.png" />
+      <Resource Include="Images\Elements\abomb.png" />
+      <Resource Include="Images\Elements\air.png" />
+      <Resource Include="Images\Elements\airplane.png" />
+      <Resource Include="Images\Elements\airport.png" />
+      <Resource Include="Images\Elements\alchemist.png" />
+      <Resource Include="Images\Elements\alcohol.png" />
+      <Resource Include="Images\Elements\alcoholic.png" />
+      <Resource Include="Images\Elements\algae.png" />
+      <Resource Include="Images\Elements\alien.png" />
+      <Resource Include="Images\Elements\aluminium.png" />
+      <Resource Include="Images\Elements\ambulance.png" />
+      <Resource Include="Images\Elements\americanfootball.png" />
+      <Resource Include="Images\Elements\ant.png" />
+      <Resource Include="Images\Elements\antarctica.png" />
+      <Resource Include="Images\Elements\anubis.png" />
+      <Resource Include="Images\Elements\arable.png" />
+      <Resource Include="Images\Elements\arm.png" />
+      <Resource Include="Images\Elements\arsenal.png" />
+      <Resource Include="Images\Elements\artist.png" />
+      <Resource Include="Images\Elements\ash.png" />
+      <Resource Include="Images\Elements\ashtray.png" />
+      <Resource Include="Images\Elements\assassin.png" />
+      <Resource Include="Images\Elements\astronaut.png" />
+      <Resource Include="Images\Elements\astronomy.png" />
+      <Resource Include="Images\Elements\audi.png" />
+      <Resource Include="Images\Elements\australia.png" />
+      <Resource Include="Images\Elements\avianflu.png" />
+      <Resource Include="Images\Elements\bacon.png" />
+      <Resource Include="Images\Elements\bacteria.png" />
+      <Resource Include="Images\Elements\ball.png" />
+      <Resource Include="Images\Elements\bar.png" />
+      <Resource Include="Images\Elements\barbeque.png" />
+      <Resource Include="Images\Elements\bat.png" />
+      <Resource Include="Images\Elements\batman.png" />
+      <Resource Include="Images\Elements\beach.png" />
+      <Resource Include="Images\Elements\bear.png" />
+      <Resource Include="Images\Elements\beast.png" />
+      <Resource Include="Images\Elements\beaver.png" />
+      <Resource Include="Images\Elements\beer.png" />
+      <Resource Include="Images\Elements\beetle.png" />
+      <Resource Include="Images\Elements\berry.png" />
+      <Resource Include="Images\Elements\bicycle.png" />
+      <Resource Include="Images\Elements\bigbang.png" />
+      <Resource Include="Images\Elements\bigben.png" />
+      <Resource Include="Images\Elements\bigcrunch.png" />
+      <Resource Include="Images\Elements\biology.png" />
+      <Resource Include="Images\Elements\bird.png" />
+      <Resource Include="Images\Elements\bitumen.png" />
+      <Resource Include="Images\Elements\blackboard.png" />
+      <Resource Include="Images\Elements\blackhole.png" />
+      <Resource Include="Images\Elements\blood.png" />
+      <Resource Include="Images\Elements\blowfish.png" />
+      <Resource Include="Images\Elements\bmw.png" />
+      <Resource Include="Images\Elements\boat.png" />
+      <Resource Include="Images\Elements\boiler.png" />
+      <Resource Include="Images\Elements\book.png" />
+      <Resource Include="Images\Elements\boomushroom.png" />
+      <Resource Include="Images\Elements\bow.png" />
+      <Resource Include="Images\Elements\brazil.png" />
+      <Resource Include="Images\Elements\bread.png" />
+      <Resource Include="Images\Elements\brick.png" />
+      <Resource Include="Images\Elements\brickhouse.png" />
+      <Resource Include="Images\Elements\butterfly.png" />
+      <Resource Include="Images\Elements\C3PO.png" />
+      <Resource Include="Images\Elements\cactus.png" />
+      <Resource Include="Images\Elements\camel.png" />
+      <Resource Include="Images\Elements\camera.png" />
+      <Resource Include="Images\Elements\canada.png" />
+      <Resource Include="Images\Elements\cancer.png" />
+      <Resource Include="Images\Elements\captain.png" />
+      <Resource Include="Images\Elements\captainnemo.png" />
+      <Resource Include="Images\Elements\car.png" />
+      <Resource Include="Images\Elements\caramel.png" />
+      <Resource Include="Images\Elements\carmine.png" />
+      <Resource Include="Images\Elements\cat.png" />
+      <Resource Include="Images\Elements\caviar.png" />
+      <Resource Include="Images\Elements\cement.png" />
+      <Resource Include="Images\Elements\cemetery.png" />
+      <Resource Include="Images\Elements\ceramics.png" />
+      <Resource Include="Images\Elements\chalk.png" />
+      <Resource Include="Images\Elements\champagne.png" />
+      <Resource Include="Images\Elements\chariot.png" />
+      <Resource Include="Images\Elements\charlesdarwin.png" />
+      <Resource Include="Images\Elements\cheese.png" />
+      <Resource Include="Images\Elements\chelsea.png" />
+      <Resource Include="Images\Elements\chemistry.png" />
+      <Resource Include="Images\Elements\chicken.png" />
+      <Resource Include="Images\Elements\china.png" />
+      <Resource Include="Images\Elements\chip.png" />
+      <Resource Include="Images\Elements\christmastree.png" />
+      <Resource Include="Images\Elements\cigarettes.png" />
+      <Resource Include="Images\Elements\city.png" />
+      <Resource Include="Images\Elements\clay.png" />
+      <Resource Include="Images\Elements\clock.png" />
+      <Resource Include="Images\Elements\cloth.png" />
+      <Resource Include="Images\Elements\clothing.png" />
+      <Resource Include="Images\Elements\cloud.png" />
+      <Resource Include="Images\Elements\co2.png" />
+      <Resource Include="Images\Elements\coal.png" />
+      <Resource Include="Images\Elements\cocacola.png" />
+      <Resource Include="Images\Elements\cochineal.png" />
+      <Resource Include="Images\Elements\coffin.png" />
+      <Resource Include="Images\Elements\colosseum.png" />
+      <Resource Include="Images\Elements\computer.png" />
+      <Resource Include="Images\Elements\computergame.png" />
+      <Resource Include="Images\Elements\concrete.png" />
+      <Resource Include="Images\Elements\continent.png" />
+      <Resource Include="Images\Elements\coral.png" />
+      <Resource Include="Images\Elements\corpse.png" />
+      <Resource Include="Images\Elements\country.png" />
+      <Resource Include="Images\Elements\cricket.png" />
+      <Resource Include="Images\Elements\czechrepublic.png" />
+      <Resource Include="Images\Elements\dam.png" />
+      <Resource Include="Images\Elements\darthvader.png" />
+      <Resource Include="Images\Elements\desert.png" />
+      <Resource Include="Images\Elements\diamond.png" />
+      <Resource Include="Images\Elements\diet.png" />
+      <Resource Include="Images\Elements\dinosaur.png" />
+      <Resource Include="Images\Elements\dough.png" />
+      <Resource Include="Images\Elements\dracula.png" />
+      <Resource Include="Images\Elements\dragon.png" />
+      <Resource Include="Images\Elements\dragonfly.png" />
+      <Resource Include="Images\Elements\dust.png" />
+      <Resource Include="Images\Elements\earth.png" />
+      <Resource Include="Images\Elements\easteregg.png" />
+      <Resource Include="Images\Elements\ectoplasm.png" />
+      <Resource Include="Images\Elements\eggs.png" />
+      <Resource Include="Images\Elements\egypt.png" />
+      <Resource Include="Images\Elements\eiffeltower.png" />
+      <Resource Include="Images\Elements\einstein.png" />
+      <Resource Include="Images\Elements\electricity.png" />
+      <Resource Include="Images\Elements\energy.png" />
+      <Resource Include="Images\Elements\engine.png" />
+      <Resource Include="Images\Elements\explosion.png" />
+      <Resource Include="Images\Elements\f1.png" />
+      <Resource Include="Images\Elements\fabergeegg.png" />
+      <Resource Include="Images\Elements\fat.png" />
+      <Resource Include="Images\Elements\feather.png" />
+      <Resource Include="Images\Elements\fern.png" />
+      <Resource Include="Images\Elements\ferrari.png" />
+      <Resource Include="Images\Elements\finland.png" />
+      <Resource Include="Images\Elements\fire.png" />
+      <Resource Include="Images\Elements\firearm.png" />
+      <Resource Include="Images\Elements\fireelemental.png" />
+      <Resource Include="Images\Elements\firefighter.png" />
+      <Resource Include="Images\Elements\firefly.png" />
+      <Resource Include="Images\Elements\fish.png" />
+      <Resource Include="Images\Elements\fisherman.png" />
+      <Resource Include="Images\Elements\flour.png" />
+      <Resource Include="Images\Elements\flower.png" />
+      <Resource Include="Images\Elements\flu.png" />
+      <Resource Include="Images\Elements\fly.png" />
+      <Resource Include="Images\Elements\fondue.png" />
+      <Resource Include="Images\Elements\football.png" />
+      <Resource Include="Images\Elements\ford.png" />
+      <Resource Include="Images\Elements\forest.png" />
+      <Resource Include="Images\Elements\fossil.png" />
+      <Resource Include="Images\Elements\france.png" />
+      <Resource Include="Images\Elements\frankenstein.png" />
+      <Resource Include="Images\Elements\frog.png" />
+      <Resource Include="Images\Elements\fruit.png" />
+      <Resource Include="Images\Elements\fugu.png" />
+      <Resource Include="Images\Elements\galaxy.png" />
+      <Resource Include="Images\Elements\gasoline.png" />
+      <Resource Include="Images\Elements\geek.png" />
+      <Resource Include="Images\Elements\genie.png" />
+      <Resource Include="Images\Elements\geology.png" />
+      <Resource Include="Images\Elements\germany.png" />
+      <Resource Include="Images\Elements\geyser.png" />
+      <Resource Include="Images\Elements\ghost.png" />
+      <Resource Include="Images\Elements\glass.png" />
+      <Resource Include="Images\Elements\gold.png" />
+      <Resource Include="Images\Elements\grape.png" />
+      <Resource Include="Images\Elements\grass.png" />
+      <Resource Include="Images\Elements\grave.png" />
+      <Resource Include="Images\Elements\grove.png" />
+      <Resource Include="Images\Elements\guitar.png" />
+      <Resource Include="Images\Elements\guitarhero.png" />
+      <Resource Include="Images\Elements\gunpowder.png" />
+      <Resource Include="Images\Elements\gymnastics.png" />
+      <Resource Include="Images\Elements\hail.png" />
+      <Resource Include="Images\Elements\hawking.png" />
+      <Resource Include="Images\Elements\hbomb.png" />
+      <Resource Include="Images\Elements\hencoop.png" />
+      <Resource Include="Images\Elements\hero.png" />
+      <Resource Include="Images\Elements\hippopotamus.png" />
+      <Resource Include="Images\Elements\hockey.png" />
+      <Resource Include="Images\Elements\hospital.png" />
+      <Resource Include="Images\Elements\hourglass.png" />
+      <Resource Include="Images\Elements\house.png" />
+      <Resource Include="Images\Elements\hunter.png" />
+      <Resource Include="Images\Elements\hut.png" />
+      <Resource Include="Images\Elements\hydrogen.png" />
+      <Resource Include="Images\Elements\ice.png" />
+      <Resource Include="Images\Elements\iceland.png" />
+      <Resource Include="Images\Elements\idea.png" />
+      <Resource Include="Images\Elements\india.png" />
+      <Resource Include="Images\Elements\infestation.png" />
+      <Resource Include="Images\Elements\insects.png" />
+      <Resource Include="Images\Elements\island.png" />
+      <Resource Include="Images\Elements\italy.png" />
+      <Resource Include="Images\Elements\japan.png" />
+      <Resource Include="Images\Elements\jedi.png" />
+      <Resource Include="Images\Elements\jellyfish.png" />
+      <Resource Include="Images\Elements\jimraynor.png" />
+      <Resource Include="Images\Elements\juice.png" />
+      <Resource Include="Images\Elements\jungle.png" />
+      <Resource Include="Images\Elements\junglebook.png" />
+      <Resource Include="Images\Elements\kamasutra.png" />
+      <Resource Include="Images\Elements\kangaroo.png" />
+      <Resource Include="Images\Elements\karelcapek.png" />
+      <Resource Include="Images\Elements\kerogen.png" />
+      <Resource Include="Images\Elements\king.png" />
+      <Resource Include="Images\Elements\knife.png" />
+      <Resource Include="Images\Elements\lamp.png" />
+      <Resource Include="Images\Elements\laracroft.png" />
+      <Resource Include="Images\Elements\lava.png" />
+      <Resource Include="Images\Elements\lavalamp.png" />
+      <Resource Include="Images\Elements\leach.png" />
+      <Resource Include="Images\Elements\libertystatue.png" />
+      <Resource Include="Images\Elements\library.png" />
+      <Resource Include="Images\Elements\lichen.png" />
+      <Resource Include="Images\Elements\lichking.png" />
+      <Resource Include="Images\Elements\life.png" />
+      <Resource Include="Images\Elements\light.png" />
+      <Resource Include="Images\Elements\lightbulb.png" />
+      <Resource Include="Images\Elements\lighthouse.png" />
+      <Resource Include="Images\Elements\lightningrod.png" />
+      <Resource Include="Images\Elements\lightsaber.png" />
+      <Resource Include="Images\Elements\lime.png" />
+      <Resource Include="Images\Elements\limestone.png" />
+      <Resource Include="Images\Elements\linux.png" />
+      <Resource Include="Images\Elements\liverpool.png" />
+      <Resource Include="Images\Elements\livestock.png" />
+      <Resource Include="Images\Elements\lizard.png" />
+      <Resource Include="Images\Elements\lobster.png" />
+      <Resource Include="Images\Elements\locomotive.png" />
+      <Resource Include="Images\Elements\love.png" />
+      <Resource Include="Images\Elements\luigi.png" />
+      <Resource Include="Images\Elements\man.png" />
+      <Resource Include="Images\Elements\mantis.png" />
+      <Resource Include="Images\Elements\manure.png" />
+      <Resource Include="Images\Elements\manutd.png" />
+      <Resource Include="Images\Elements\mario.png" />
+      <Resource Include="Images\Elements\mcdonalds.png" />
+      <Resource Include="Images\Elements\meat.png" />
+      <Resource Include="Images\Elements\mercedes.png" />
+      <Resource Include="Images\Elements\metal.png" />
+      <Resource Include="Images\Elements\mexico.png" />
+      <Resource Include="Images\Elements\milk.png" />
+      <Resource Include="Images\Elements\mirror.png" />
+      <Resource Include="Images\Elements\mite.png" />
+      <Resource Include="Images\Elements\mobydick.png" />
+      <Resource Include="Images\Elements\mold.png" />
+      <Resource Include="Images\Elements\monkey.png" />
+      <Resource Include="Images\Elements\monument.png" />
+      <Resource Include="Images\Elements\moon.png" />
+      <Resource Include="Images\Elements\mosquito.png" />
+      <Resource Include="Images\Elements\moss.png" />
+      <Resource Include="Images\Elements\motorboat.png" />
+      <Resource Include="Images\Elements\motorcycle.png" />
+      <Resource Include="Images\Elements\mouse.png" />
+      <Resource Include="Images\Elements\movie.png" />
+      <Resource Include="Images\Elements\mud.png" />
+      <Resource Include="Images\Elements\mummy.png" />
+      <Resource Include="Images\Elements\museum.png" />
+      <Resource Include="Images\Elements\mushroom.png" />
+      <Resource Include="Images\Elements\music.png" />
+      <Resource Include="Images\Elements\musician.png" />
+      <Resource Include="Images\Elements\napoleon.png" />
+      <Resource Include="Images\Elements\needforspeed.png" />
+      <Resource Include="Images\Elements\nerd.png" />
+      <Resource Include="Images\Elements\netherlands.png" />
+      <Resource Include="Images\Elements\nissan.png" />
+      <Resource Include="Images\Elements\norway.png" />
+      <Resource Include="Images\Elements\obesity.png" />
+      <Resource Include="Images\Elements\ocean.png" />
+      <Resource Include="Images\Elements\oldman.png" />
+      <Resource Include="Images\Elements\omelette.png" />
+      <Resource Include="Images\Elements\oscar.png" />
+      <Resource Include="Images\Elements\oxygen.png" />
+      <Resource Include="Images\Elements\ozone.png" />
+      <Resource Include="Images\Elements\paint.png" />
+      <Resource Include="Images\Elements\paleontology.png" />
+      <Resource Include="Images\Elements\panda.png" />
+      <Resource Include="Images\Elements\paper.png" />
+      <Resource Include="Images\Elements\pearl.png" />
+      <Resource Include="Images\Elements\peat.png" />
+      <Resource Include="Images\Elements\penguin.png" />
+      <Resource Include="Images\Elements\penicillin.png" />
+      <Resource Include="Images\Elements\perfume.png" />
+      <Resource Include="Images\Elements\petroleum.png" />
+      <Resource Include="Images\Elements\pharaoh.png" />
+      <Resource Include="Images\Elements\phoenix.png" />
+      <Resource Include="Images\Elements\physics.png" />
+      <Resource Include="Images\Elements\picard.png" />
+      <Resource Include="Images\Elements\picture.png" />
+      <Resource Include="Images\Elements\pie.png" />
+      <Resource Include="Images\Elements\pig.png" />
+      <Resource Include="Images\Elements\pillow.png" />
+      <Resource Include="Images\Elements\pilot.png" />
+      <Resource Include="Images\Elements\pinocchio.png" />
+      <Resource Include="Images\Elements\pirate.png" />
+      <Resource Include="Images\Elements\pirateship.png" />
+      <Resource Include="Images\Elements\pizza.png" />
+      <Resource Include="Images\Elements\planet.png" />
+      <Resource Include="Images\Elements\plankton.png" />
+      <Resource Include="Images\Elements\playcards.png" />
+      <Resource Include="Images\Elements\plesiosaur.png" />
+      <Resource Include="Images\Elements\plutonium.png" />
+      <Resource Include="Images\Elements\poison.png" />
+      <Resource Include="Images\Elements\poisonedweapon.png" />
+      <Resource Include="Images\Elements\polarbear.png" />
+      <Resource Include="Images\Elements\pressure.png" />
+      <Resource Include="Images\Elements\prisoner.png" />
+      <Resource Include="Images\Elements\protoss.png" />
+      <Resource Include="Images\Elements\pterosaur.png" />
+      <Resource Include="Images\Elements\pyramid.png" />
+      <Resource Include="Images\Elements\queenofblades.png" />
+      <Resource Include="Images\Elements\quetzalcoatl.png" />
+      <Resource Include="Images\Elements\R2D2.png" />
+      <Resource Include="Images\Elements\radar.png" />
+      <Resource Include="Images\Elements\radio.png" />
+      <Resource Include="Images\Elements\radioactivity.png" />
+      <Resource Include="Images\Elements\rain.png" />
+      <Resource Include="Images\Elements\rainbow.png" />
+      <Resource Include="Images\Elements\reed.png" />
+      <Resource Include="Images\Elements\relativitytheory.png" />
+      <Resource Include="Images\Elements\renault.png" />
+      <Resource Include="Images\Elements\residentevil.png" />
+      <Resource Include="Images\Elements\robinhood.png" />
+      <Resource Include="Images\Elements\robot.png" />
+      <Resource Include="Images\Elements\romania.png" />
+      <Resource Include="Images\Elements\rubber.png" />
+      <Resource Include="Images\Elements\rugby.png" />
+      <Resource Include="Images\Elements\russia.png" />
+      <Resource Include="Images\Elements\rust.png" />
+      <Resource Include="Images\Elements\sailboat.png" />
+      <Resource Include="Images\Elements\salamander.png" />
+      <Resource Include="Images\Elements\samurai.png" />
+      <Resource Include="Images\Elements\sand.png" />
+      <Resource Include="Images\Elements\sandwich.png" />
+      <Resource Include="Images\Elements\santaclaus.png" />
+      <Resource Include="Images\Elements\saudiarabia.png" />
+      <Resource Include="Images\Elements\sauna.png" />
+      <Resource Include="Images\Elements\scarab.png" />
+      <Resource Include="Images\Elements\science.png" />
+      <Resource Include="Images\Elements\scientist.png" />
+      <Resource Include="Images\Elements\scissors.png" />
+      <Resource Include="Images\Elements\scorpion.png" />
+      <Resource Include="Images\Elements\scotland.png" />
+      <Resource Include="Images\Elements\seed.png" />
+      <Resource Include="Images\Elements\sex.png" />
+      <Resource Include="Images\Elements\sexandthecity.png" />
+      <Resource Include="Images\Elements\shark.png" />
+      <Resource Include="Images\Elements\shell.png" />
+      <Resource Include="Images\Elements\sick.png" />
+      <Resource Include="Images\Elements\silicon.png" />
+      <Resource Include="Images\Elements\sith.png" />
+      <Resource Include="Images\Elements\sky.png" />
+      <Resource Include="Images\Elements\skyscraper.png" />
+      <Resource Include="Images\Elements\smoke.png" />
+      <Resource Include="Images\Elements\snail.png" />
+      <Resource Include="Images\Elements\snake.png" />
+      <Resource Include="Images\Elements\sniper.png" />
+      <Resource Include="Images\Elements\snow.png" />
+      <Resource Include="Images\Elements\snowman.png" />
+      <Resource Include="Images\Elements\soap.png" />
+      <Resource Include="Images\Elements\sodawater.png" />
+      <Resource Include="Images\Elements\solarsystem.png" />
+      <Resource Include="Images\Elements\soldier.png" />
+      <Resource Include="Images\Elements\somalia.png" />
+      <Resource Include="Images\Elements\sound.png" />
+      <Resource Include="Images\Elements\southafrica.png" />
+      <Resource Include="Images\Elements\spinningwheel.png" />
+      <Resource Include="Images\Elements\sport.png" />
+      <Resource Include="Images\Elements\star.png" />
+      <Resource Include="Images\Elements\starcraft2.png" />
+      <Resource Include="Images\Elements\starfish.png" />
+      <Resource Include="Images\Elements\starship.png" />
+      <Resource Include="Images\Elements\starwars.png" />
+      <Resource Include="Images\Elements\statue.png" />
+      <Resource Include="Images\Elements\steam.png" />
+      <Resource Include="Images\Elements\steamengine.png" />
+      <Resource Include="Images\Elements\steamer.png" />
+      <Resource Include="Images\Elements\stone.png" />
+      <Resource Include="Images\Elements\storm.png" />
+      <Resource Include="Images\Elements\submarine.png" />
+      <Resource Include="Images\Elements\sugar.png" />
+      <Resource Include="Images\Elements\sugarcane.png" />
+      <Resource Include="Images\Elements\sulfur.png" />
+      <Resource Include="Images\Elements\sun.png" />
+      <Resource Include="Images\Elements\supernova.png" />
+      <Resource Include="Images\Elements\sushi.png" />
+      <Resource Include="Images\Elements\swamp.png" />
+      <Resource Include="Images\Elements\swineflu.png" />
+      <Resource Include="Images\Elements\swissarmyknife.png" />
+      <Resource Include="Images\Elements\switzerland.png" />
+      <Resource Include="Images\Elements\tabletennis.png" />
+      <Resource Include="Images\Elements\tajmahal.png" />
+      <Resource Include="Images\Elements\team.png" />
+      <Resource Include="Images\Elements\tequila.png" />
+      <Resource Include="Images\Elements\termite.png" />
+      <Resource Include="Images\Elements\terran.png" />
+      <Resource Include="Images\Elements\theater.png" />
+      <Resource Include="Images\Elements\thebeatles.png" />
+      <Resource Include="Images\Elements\thunderstorm.png" />
+      <Resource Include="Images\Elements\tiger.png" />
+      <Resource Include="Images\Elements\time.png" />
+      <Resource Include="Images\Elements\toast.png" />
+      <Resource Include="Images\Elements\tobacco.png" />
+      <Resource Include="Images\Elements\tomandjerry.png" />
+      <Resource Include="Images\Elements\tombraider.png" />
+      <Resource Include="Images\Elements\tool.png" />
+      <Resource Include="Images\Elements\tornado.png" />
+      <Resource Include="Images\Elements\tortoise.png" />
+      <Resource Include="Images\Elements\toyota.png" />
+      <Resource Include="Images\Elements\tractor.png" />
+      <Resource Include="Images\Elements\transistor.png" />
+      <Resource Include="Images\Elements\treasure.png" />
+      <Resource Include="Images\Elements\tree.png" />
+      <Resource Include="Images\Elements\tropics.png" />
+      <Resource Include="Images\Elements\turtle.png" />
+      <Resource Include="Images\Elements\twilightsaga.png" />
+      <Resource Include="Images\Elements\uk.png" />
+      <Resource Include="Images\Elements\uncutdiamond.png" />
+      <Resource Include="Images\Elements\undead.png" />
+      <Resource Include="Images\Elements\universe.png" />
+      <Resource Include="Images\Elements\uranium.png" />
+      <Resource Include="Images\Elements\usa.png" />
+      <Resource Include="Images\Elements\ussenterprise.png" />
+      <Resource Include="Images\Elements\vampire.png" />
+      <Resource Include="Images\Elements\vinegar.png" />
+      <Resource Include="Images\Elements\vodka.png" />
+      <Resource Include="Images\Elements\void.png" />
+      <Resource Include="Images\Elements\volcano.png" />
+      <Resource Include="Images\Elements\vulture.png" />
+      <Resource Include="Images\Elements\vwbeetle.png" />
+      <Resource Include="Images\Elements\wagon.png" />
+      <Resource Include="Images\Elements\warrior.png" />
+      <Resource Include="Images\Elements\water.png" />
+      <Resource Include="Images\Elements\watermelon.png" />
+      <Resource Include="Images\Elements\weevil.png" />
+      <Resource Include="Images\Elements\werewolf.png" />
+      <Resource Include="Images\Elements\whale.png" />
+      <Resource Include="Images\Elements\wheat.png" />
+      <Resource Include="Images\Elements\wheel.png" />
+      <Resource Include="Images\Elements\whiskey.png" />
+      <Resource Include="Images\Elements\wind.png" />
+      <Resource Include="Images\Elements\wine.png" />
+      <Resource Include="Images\Elements\wood.png" />
+      <Resource Include="Images\Elements\woodenship.png" />
+      <Resource Include="Images\Elements\wool.png" />
+      <Resource Include="Images\Elements\worm.png" />
+      <Resource Include="Images\Elements\wormhole.png" />
+      <Resource Include="Images\Elements\wow.png" />
+      <Resource Include="Images\Elements\yarn.png" />
+      <Resource Include="Images\Elements\yeast.png" />
+      <Resource Include="Images\Elements\yogurt.png" />
+      <Resource Include="Images\Elements\yoshi.png" />
+      <Resource Include="Images\Elements\yoshiegg.png" />
+      <Resource Include="Images\Elements\zeratul.png" />
+      <Resource Include="Images\Elements\zerg.png" />
+      <Resource Include="Images\Elements\zombie.png" />
+      <Resource Include="Images\Elements\zoo.png" />
+      <Resource Include="Images\Elements\school.png" />
+      <Resource Include="Images\Elements\schoolbus.png" />
+      <Resource Include="Images\Elements\student.png" />
+      <Resource Include="Images\Elements\soundofmusic.png" />
+      <Resource Include="Images\Elements\dollar.png" />
+      <Resource Include="Images\Elements\economics.png" />
+      <Resource Include="Images\Elements\economy.png" />
+      <Resource Include="Images\Elements\euro.png" />
+      <Resource Include="Images\Elements\money.png" />
+      <Resource Include="Images\Elements\pound.png" />
+      <Resource Include="Images\Elements\bank.png" />
+      <Resource Include="Images\Elements\creditcard.png" />
+      <Resource Include="Images\Elements\eu.png" />
+      <Resource Include="Images\Elements\plastic.png" />
+      <Resource Include="Images\Elements\vault.png" />
+      <Resource Include="Images\Elements\box.png" />
+      <Resource Include="Images\Elements\cargo.png" />
+      <Resource Include="Images\Elements\container.png" />
+      <Resource Include="Images\Elements\basket.png" />
+      <Resource Include="Images\Elements\depositbox.png" />
+      <Resource Include="Images\Elements\safe.png" />
+      <Resource Include="Images\Elements\toolbox.png" />
+      <Resource Include="Images\Elements\basketball.png" />
+      <Resource Include="Images\Elements\factory.png" />
+      <Resource Include="Images\Elements\helmet.png" />
+      <Resource Include="Images\Elements\product.png" />
+      <Resource Include="Images\Elements\worker.png" />
+      <Resource Include="Images\Elements\christmas.png" />
+      <Resource Include="Images\Elements\gift.png" />
+      <Resource Include="Images\Elements\giftbox.png" />
+      <Resource Include="Images\Elements\language.png" />
+      <Resource Include="Images\Elements\linguistics.png" />
+      <Resource Include="Images\Elements\work.png" />
+      <Resource Include="Images\Elements\company.png" />
+      <Resource Include="Images\Elements\soundmixer.png" />
+      <Resource Include="Images\Elements\speakers.png" />
+   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="Images\Languages\German.png" />
+      <Resource Include="Images\Languages\Portuguese.png" />
+      <Resource Include="Images\Languages\Spanish.png" />
+      <Resource Include="Images\Languages\Turkish.png" />
+      <Resource Include="Images\Languages\Hungarian.png" />
+      <Resource Include="Images\Languages\French.png" />
+      <Resource Include="Images\Languages\Danish.png" />
+      <Resource Include="Images\Languages\Italian.png" />
+      <Resource Include="Images\Languages\Hebrew.png" />
+      <Resource Include="Images\Languages\Indonesian.png" />
+      <Resource Include="Images\Languages\Slovak.png" />
+      <Resource Include="Images\Languages\Polish.png" />
+      <Resource Include="Images\Languages\Dutch.png" />
+      <Resource Include="Images\Languages\English.png" />
+      <Resource Include="Images\Languages\Romanian.png" />
+      <Resource Include="Images\Languages\Czech.png" />
+   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="Images\more.png" />
+      <Resource Include="Images\loadblack.png" />
+      <Resource Include="Images\saveblack.png" />
+      <Resource Include="Images\clear.png" />
+      <Resource Include="Images\aboutblack.png" />
+      <Resource Include="Images\helpblack.png" />
+      <Resource Include="Images\wikipedia.png" />
+      <Resource Include="Images\cheatblack.png" />
+      <Resource Include="Images\search.png" />
+      <Resource Include="Images\hintblack.png" />
+      <Resource Include="Images\RecycleBinEmpty.png" />
+      <Resource Include="Images\RecycleBinFull.png" />
+      <Resource Include="Images\trashblack.png" />
+      <Resource Include="Images\block.png" />
+      <Resource Include="Images\victoryface.png" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <Resource Include="Data\AlchemyCombinations.txt" />
+      <Resource Include="Data\AlchemyElements.txt" />
+      <Resource Include="Data\AlchemyElementGroups.txt" />
+      <Resource Include="Data\Credits.txt" />
+   </ItemGroup>   
+   <ItemGroup>
+      <Resource Include="Data\Elements\English.txt" />
+      <Resource Include="Data\Elements\Romanian.txt" />
+      <Resource Include="Data\Elements\Polish.txt" />
+      <Resource Include="Data\Elements\Spanish.txt" />
+      <Resource Include="Data\Elements\Indonesian.txt" />
+      <Resource Include="Data\Elements\Slovak.txt" />
+      <Resource Include="Data\Elements\Hebrew.txt" />
+      <Resource Include="Data\Elements\Italian.txt" />
+      <Resource Include="Data\Elements\German.txt" />
+      <Resource Include="Data\Elements\Danish.txt" />
+      <Resource Include="Data\Elements\French.txt" />
+      <Resource Include="Data\Elements\Hungarian.txt" />
+      <Resource Include="Data\Elements\Portuguese.txt" />
+      <Resource Include="Data\Elements\Czech.txt" />
+      <Resource Include="Data\Elements\Dutch.txt" />
+   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="Data\UI\Dutch.txt" />
+      <Resource Include="Data\UI\Romanian.txt" />
+      <Resource Include="Data\UI\English.txt" />
+      <Resource Include="Data\UIIndexes.txt" />
+      <Resource Include="Data\UI\Polish.txt" />
+      <Resource Include="Data\UI\Spanish.txt" />
+      <Resource Include="Data\UI\Indonesian.txt" />
+      <Resource Include="Data\UI\Slovak.txt" />
+      <Resource Include="Data\UI\Hebrew.txt" />
+      <Resource Include="Data\UI\German.txt" />
+      <Resource Include="Data\UI\Danish.txt" />
+      <Resource Include="Data\UI\French.txt" />
+      <Resource Include="Data\UI\Czech.txt" />
+      <Resource Include="Data\UI\Portuguese.txt" />
+      <Resource Include="Data\UI\Hungarian.txt" />
+      <Resource Include="Data\UI\Italian.txt" />
+   </ItemGroup>
+   <ItemGroup>
+      <Resource Include="Data\Languages\Dutch.txt" />
+      <Resource Include="Data\Languages\English.txt" />
+      <Resource Include="Data\Languages\Romanian.txt" />
+      <Resource Include="Data\LanguageIndexes.txt" />
+      <Resource Include="Data\Languages\Czech.txt" />
+      <Resource Include="Data\Languages\Portuguese.txt" />
+      <Resource Include="Data\Languages\Hungarian.txt" />
+      <Resource Include="Data\Languages\French.txt" />
+      <Resource Include="Data\Languages\Danish.txt" />
+      <Resource Include="Data\Languages\German.txt" />
+      <Resource Include="Data\Languages\Italian.txt" />
+      <Resource Include="Data\Languages\Hebrew.txt" />
+      <Resource Include="Data\Languages\Indonesian.txt" />
+      <Resource Include="Data\Languages\Slovak.txt" />
+      <Resource Include="Data\Languages\Spanish.txt" />
+      <Resource Include="Data\Languages\Polish.txt" />
+   </ItemGroup>
+   <ItemGroup>
+   </ItemGroup>
+   <ItemGroup>
+   </ItemGroup>
+   <ItemGroup>
+      <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+      <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.355802">
+         <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.Windows.Compatibility" Version="7.0.0" />
+   </ItemGroup>
+   <ItemGroup>
+      <Compile Remove="AlchemyResource.Designer.cs" />
+      <EmbeddedResource Remove="AlchemyResource.resx" />
+   </ItemGroup>
+</Project>

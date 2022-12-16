@@ -1,0 +1,15 @@
+﻿English=אנגלית
+Romanian=רומנית
+Dutch=הולנדית
+Czech=צ'כית
+Portuguese=פורטוגזית
+Hungarian=הונגרית
+French=צרפתית
+Danish=דנית
+German=גרמנית
+Italian=איטלקית
+Hebrew=עברית
+Slovak=סלובקית
+Indonesian=אינדונזית
+Spanish=ספרדית
+Polish=פולני

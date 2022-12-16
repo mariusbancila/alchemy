@@ -1,0 +1,66 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System.IO" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media;
+
+namespace Alchemy
+{
+   static class GroupIndexes
+   {
+<#
+		int index = 0;
+		using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\AlchemyElementGroups.txt")))
+		{
+			string line = null;
+			while((line = reader.ReadLine()) != null)
+			{
+				string [] split = line.Split(new char[]{'='});
+				if(split != null && split.Length == 2)
+				{
+#>      public const int <#=split[0]#> = <#=index#>;
+<#
+					index++;
+				}
+			}
+		}
+#>
+   }
+
+   static class AlchemyElementGroups
+   {
+      private static AlchemyElementGroup[] groups;
+
+      static AlchemyElementGroups()
+      {
+         groups = new AlchemyElementGroup[]
+         {
+<#
+		using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\AlchemyElementGroups.txt")))
+		{
+			string line = null;
+			while((line = reader.ReadLine()) != null)
+			{
+				string [] split = line.Split(new char[]{'='});
+				if(split != null && split.Length == 2)
+				{
+#>
+            new AlchemyElementGroup{ID=GroupIndexes.<#=split[0]#>, Name="<#=split[0]#>", TextBrush=Brushes.<#=split[1]#>},
+<#
+				}
+			}
+		}
+#>
+         };
+      }
+
+      public static AlchemyElementGroup[] Groups
+      {
+         get { return groups; }
+      }
+   }
+}

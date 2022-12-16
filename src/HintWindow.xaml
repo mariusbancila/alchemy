@@ -1,0 +1,82 @@
+﻿<Window x:Class="Alchemy.HintWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hints" 
+        Height="170" Width="250"
+        Background="White"
+        WindowStyle="None" 
+        ResizeMode="NoResize" 
+        ShowInTaskbar="False"
+        PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown" 
+        xmlns:my="clr-namespace:Alchemy">
+
+    <Border x:Name="brdElement"
+            Width="Auto" Height="Auto"
+            BorderThickness="1"
+            CornerRadius="5"
+            Background="Black">
+    
+    <!-- panel that hosts all the controls -->
+    <DockPanel Name="dockPanel" 
+               Height="Auto" Width="Auto"
+               LastChildFill="True">
+        
+        <!-- text on the top -->
+        <Label Name="labelDescription" 
+               Height="Auto" Width="Auto"
+               Foreground="White"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Top"
+               Margin="2,2,2,2"
+               DockPanel.Dock="Top">
+            <TextBlock Name="labelDescriptionBlock"
+                       Foreground="White"
+                           Width="Auto" Height="Auto"
+                           HorizontalAlignment="Right" VerticalAlignment="Top" 
+                           TextAlignment="Left"
+                           TextWrapping="Wrap"
+                       Text="Try to make"/>
+        </Label>
+
+        <!-- text on the bottom -->
+        <Label VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Center"
+               Margin="2,2,2,2"
+               DockPanel.Dock="Bottom">
+            <TextBlock Name="hintCloseTip"
+                       Foreground="Gray"
+                           Width="Auto" Height="Auto"
+                           HorizontalAlignment="Right" VerticalAlignment="Top" 
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"
+                       Text="Click inside to close the tip window"/>
+        </Label>
+
+        <!-- panel that hosts the hint controls -->
+        <WrapPanel Name="hintPanel"
+                   Width="220" Height="Auto"
+                   HorizontalAlignment="Center">
+
+            <my:ElementControl x:Name="elementResult" 
+                               Height="94" Width="64" 
+                               Margin="5,10,5,10"/>
+            <Label Name="fromLabel"
+                   HorizontalAlignment="Center"
+                   VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                   Margin="5,0,5,0"
+                   Width="60"
+                   Foreground="White">
+                <TextBlock Name="fromLabelText"
+                           Width="Auto" Height="Auto"
+                           HorizontalAlignment="Center" VerticalAlignment="Center" 
+                           TextAlignment="Center"
+                           TextWrapping="Wrap"
+                           Text="from" />
+                </Label>
+            <my:ElementControl x:Name="elementSource" 
+                               Height="94" Width="64" 
+                               Margin="5,10,5,10" />
+        </WrapPanel>
+    </DockPanel>
+    </Border>
+
+</Window>

@@ -1,0 +1,15 @@
+﻿English=Angol
+Romanian=Román
+Dutch=Holland
+Czech=Cseh
+Portuguese=Portugál
+Hungarian=Magyar
+French=Francia
+Danish=Dán
+German=Német
+Italian=Olasz
+Hebrew=Héber
+Slovak=Szlovák
+Indonesian=Indonéz
+Spanish=Spanyol
+Polish=Lengyel

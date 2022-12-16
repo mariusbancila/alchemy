@@ -1,0 +1,15 @@
+﻿English=Angličtina
+Romanian=Rumunština
+Dutch=Holandština
+Czech=Čeština
+Portuguese=Portugalština
+Hungarian=Maďarština
+French=Francouština
+Danish=Dánština
+German=Němčina
+Italian=Italština
+Hebrew=Hebrejština
+Slovak=Slovenština
+Indonesian=Indonéština
+Spanish=Španělština
+Polish=Polský

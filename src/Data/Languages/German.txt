@@ -1,0 +1,15 @@
+﻿English=Englisch
+Romanian=Rumänisch
+Dutch=Holländisch
+Czech=Tschechisch
+Portuguese=Portugiesisch
+Hungarian=Ungarisch
+French=Französisch
+Danish=Dänisch
+German=Deutsch
+Italian=Italienisch
+Hebrew=Hebrew
+Slovak=Slowakisch
+Indonesian=Indonesier
+Spanish=Spanisch
+Polish=Polnisch

@@ -1,0 +1,15 @@
+English,LeftToRight,en
+Romanian,LeftToRight,ro
+Dutch,LeftToRight,nl
+Czech,LeftToRight,cs
+Portuguese,LeftToRight,pt
+Hungarian,LeftToRight,hu
+French,LeftToRight,fr
+Danish,LeftToRight,da
+German,LeftToRight,de
+Italian,LeftToRight,it
+Hebrew,RightToLeft,he
+Slovak,LeftToRight,sk
+Indonesian,LeftToRight,id
+Spanish,LeftToRight,es
+Polish,LeftToRight,pl

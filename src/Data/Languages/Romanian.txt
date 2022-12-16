@@ -1,0 +1,15 @@
+﻿English=Engleza
+Romanian=Romana
+Dutch=Olandeza
+Czech=Ceha
+Portuguese=Portugheza
+Hungarian=Maghiara
+French=Franceza
+Danish=Daneza
+German=Germana
+Italian=Italiana
+Hebrew=Ebraica
+Slovak=Slovava
+Indonesian=Indoneziana
+Spanish=Spaniola
+Polish=Poloneza

@@ -1,0 +1,91 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System.IO" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+
+namespace Alchemy
+{
+   static class ElementIndexes
+   {
+<#
+		int index = 0;
+		using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\AlchemyElements.txt")))
+		{
+			string line = null;
+			while((line = reader.ReadLine()) != null)
+			{
+				string [] split = line.Split(new char[]{'='});
+				if(split != null && split.Length == 2)
+				{
+					string name = split[0].EndsWith("*") ? 
+						split[0].Substring(0, split[0].Length-1) : split[0];
+					name = name.Replace(" ", string.Empty);
+#>      public const int <#=name#> = <#=index#>;
+<#
+					index++;
+				}
+			}
+		}
+#>
+   }
+
+   static class AlchemyElements
+   {
+      private static AlchemyElement[] elements;
+
+      static AlchemyElements()
+      {
+         elements = new AlchemyElement[]
+         {
+<#
+		using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\AlchemyElements.txt")))
+		{
+			string line = null;
+			while((line = reader.ReadLine()) != null)
+			{
+				string [] split1 = line.Split(new char[]{'='});
+				if(split1 != null && split1.Length == 2)
+				{
+					string [] split2 = split1[1].Split(new char[]{','});
+					if(split2 != null && split2.Length >= 1)
+					{
+						string name = split1[0];
+						string terminal = "false";
+						if(split1[0].EndsWith("*"))
+						{
+							name = split1[0].Substring(0, split1[0].Length-1);
+							terminal = "true";
+						}
+						string normalizedname = name.Replace(" ", string.Empty);
+						if(string.IsNullOrEmpty(split2[1]))
+						{
+#>
+            new AlchemyElement{ID=ElementIndexes.<#=normalizedname#>, Group = AlchemyElementGroups.Groups[GroupIndexes.<#=split2[0]#>], Terminal = <#=terminal#>, Icon = null},
+<#
+
+						}
+						else
+						{
+#>
+            new AlchemyElement{ID=ElementIndexes.<#=normalizedname#>, Group = AlchemyElementGroups.Groups[GroupIndexes.<#=split2[0]#>], Terminal = <#=terminal#>, Icon = new BitmapImage(new Uri("Images/Elements/<#=split2[1]#>", UriKind.Relative))},
+<#														
+						}
+					}
+				}
+			}
+		}
+#>
+         };
+      }
+
+      public static AlchemyElement[] Elements
+      {
+         get { return elements; }
+      }
+   }
+}

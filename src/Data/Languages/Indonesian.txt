@@ -1,0 +1,15 @@
+﻿English=Inggris
+Romanian=Rumania
+Dutch=Belanda
+Czech=Ceko
+Portuguese=Portugis
+Hungarian=Hungaria
+French=Perancis
+Danish=Denmark
+German=Jerman
+Italian=Italia
+Hebrew=Ibrani
+Slovak=Slovakia
+Indonesian=Bahasa Indonesia
+Spanish=Bahasa Spanyol
+Polish=Bahasa Polandia

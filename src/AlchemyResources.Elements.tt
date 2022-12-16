@@ -1,0 +1,57 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" encoding="utf-8" #>
+<#@ import namespace="System.IO" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Alchemy
+{
+    static partial class AlchemyResources
+    {
+        public static class Elements
+        {
+            private static Dictionary<int, string[]> m_elementresources =
+                new Dictionary<int, string[]>();
+
+            public static string LocalizedName(int id)
+            {
+                return m_elementresources[Languages.CurrentLanguage][id];
+            }
+				
+            static Elements()
+            {
+<#
+string [] filenames = Directory.GetFiles(Host.ResolvePath(@"Data\Elements"));
+foreach(string filename in filenames)
+{
+	FileInfo fi = new FileInfo(filename);
+	string name = fi.Name.Replace(fi.Extension, string.Empty);
+#>				m_elementresources[Languages.Indexes.<#=name#>] = new string[]
+				{
+<#
+	using(StreamReader reader = fi.OpenText())
+	{
+		string line = null;
+		while((line = reader.ReadLine()) != null)
+		{
+			string [] split = line.Split(new char[]{'='});
+			if(split != null && split.Length == 2)
+			{
+#>					"<#=split[1]#>",
+<#
+			}
+		}
+	}
+#>
+				};
+				
+<#
+
+}
+#>
+            }
+        }
+    }
+}

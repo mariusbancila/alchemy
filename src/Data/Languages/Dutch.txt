@@ -1,0 +1,15 @@
+﻿English=Engels
+Romanian=Roemeens
+Dutch=Nederlands
+Czech=Czech
+Portuguese=Portuguese
+Hungarian=Hongaarse
+French=Frans
+Danish=Deens
+German=Duits
+Italian=Italiaanse
+Hebrew=Hebreeuws
+Slovak=Slowaakse
+Indonesian=Indonesisch
+Spanish=Spaans
+Polish=Pools

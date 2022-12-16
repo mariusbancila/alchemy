@@ -1,0 +1,129 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System.IO" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+
+namespace Alchemy
+{
+    static partial class AlchemyResources
+    {
+		public static class Languages
+		{		
+        	private static Dictionary<int, string[]> m_languageresources =
+            	new Dictionary<int, string[]>();
+				
+			private static Dictionary<int, FlowDirection> m_flowdirection = 
+				new Dictionary<int, FlowDirection>();
+				
+			private static Dictionary<int, string> m_wikiLanguages = 
+				new Dictionary<int, string>();
+	
+        	public static class Indexes
+        	{
+<#
+using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\LanguageIndexes.txt")))
+{
+	string line = null;
+	int index = 0;
+	while((line = reader.ReadLine()) != null)
+	{
+		string [] split = line.Split(new char[]{','});
+		if(split != null && split.Length >= 2)
+		{		
+#>
+				public const int <#=split[0]#> = <#=index#>;
+<#
+		}
+		index++;
+	}
+}
+#>
+			}
+
+			#region properties
+<#
+using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\LanguageIndexes.txt")))
+{
+	string line = null;
+	while((line = reader.ReadLine()) != null)
+	{
+		string [] split = line.Split(new char[]{','});
+		if(split != null && split.Length == 2)
+		{				
+#>
+			public static string <#= split[0] #> { get { return m_languageresources[Languages.CurrentLanguage][Indexes.<#= split[0] #>];}}
+<#
+		}
+	}
+}
+#>
+			#endregion
+
+        	public static int CurrentLanguage { get; set; }
+			public static string CurrentLanguageName { get {return m_languageresources[Languages.CurrentLanguage][Languages.CurrentLanguage];}}
+			public static string LanguageName(int lang,int local) {return m_languageresources[local][lang];}
+			public static FlowDirection CurrentFlowDirection { get {return m_flowdirection[Languages.CurrentLanguage]; } }
+			public static string CurrentWikiLanguage { get {return m_wikiLanguages[Languages.CurrentLanguage];}}
+		
+			static Languages()
+			{
+<#
+using(StreamReader reader = File.OpenText(Host.ResolvePath(@"Data\LanguageIndexes.txt")))
+{
+	string line = null;
+	while((line = reader.ReadLine()) != null)
+	{
+		string [] split = line.Split(new char[]{','});
+		if(split != null && split.Length >= 2)
+		{				
+#>
+				m_flowdirection[Languages.Indexes.<#=split[0]#>] = FlowDirection.<#=split[1]#>;
+<#
+		}
+		if(split != null && split.Length >= 3)
+		{				
+#>
+				m_wikiLanguages[Languages.Indexes.<#=split[0]#>] = "<#=split[2]#>";
+<#
+		}
+		
+	}
+}
+#>			
+			
+<#
+string [] filenames = Directory.GetFiles(Host.ResolvePath(@"Data\Languages"));
+foreach(string filename in filenames)
+{
+	FileInfo fi = new FileInfo(filename);
+	string name = fi.Name.Replace(fi.Extension, string.Empty);
+#>				m_languageresources[Languages.Indexes.<#=name#>] = new string[]
+				{
+<#
+	using(StreamReader reader = fi.OpenText())
+	{
+		string line = null;
+		while((line = reader.ReadLine()) != null)
+		{
+			string [] split = line.Split(new char[]{'='});
+			if(split != null && split.Length == 2)
+			{
+#>					"<#=split[1]#>",
+<#
+			}
+		}
+	}
+#>
+				};
+				
+<#
+}
+#>						
+			}
+		}
+    }
+}

@@ -1,0 +1,15 @@
+﻿English=Marius Bancila
+Romanian=Marius Bancila
+Dutch=Ruud van der Eem
+Czech=Lukas Juda (LKJ)
+Portuguese=Bruno Silva
+Hungarian=Zoltán Perge
+French=Fabien Celier (Lord of Dark)
+Danish=Jeppe Uhd
+German=Martin
+Italian=Leandro Papi
+Hebrew=Erez Segall
+Slovak=Jozef Krsak
+Indonesian=Pamungkas Atma Saputra
+Spanish=Rolando Rodríguez (Lexxinho) & Eduardo Kucharsky
+Polish=Marcin Pawlicki
